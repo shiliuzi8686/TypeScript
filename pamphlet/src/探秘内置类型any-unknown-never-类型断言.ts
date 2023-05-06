@@ -28,3 +28,9 @@ let v1: never
 let v2: void
 // v1 = v2
 v2 = v1
+
+// 类型断言：警告编译器不准报错 --- 是一个将变量的已有类型更改为新指定类型的操作
+
+// 它的基本语法是 as NewType，你可以将 any / unknown 类型断言到一个具体的类型
+
+let unknownVar: unknown
