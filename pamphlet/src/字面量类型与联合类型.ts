@@ -14,13 +14,36 @@ let res: Res;
 // if(res.status === '')
 
 
-//字面量类型
+//字面量类型-主要包括字符串字面量类型、数字字面量类型、布尔字面量类型和对象字面量类型-可以直接作为类型标注
+// const str: "linbudu" = "linbudu";
+// const num: 599 = 599;
+// const bool: true = true;
 
 // 对象字面量
-
+interface Tmp {
+    obj: {
+      name: "linbudu",
+      age: 18
+    }
+  }
+  
+  const tmp: Tmp = {
+    obj: {
+      name: "linbudu",
+      age: 18
+    }
+  }
 
 
 //枚举
+enum PageUrl {
+    Home_Page_Url = "url1",
+    Setting_Page_Url = "url2",
+    Share_Page_Url = "url3",
+}
+  
+const home = PageUrl.Home_Page_Url;
+
 enum Item{
     Foo,
     Bar,

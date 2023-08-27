@@ -43,6 +43,18 @@ const tmp12: String = 'linbudu';
 // 在任何情况下，你都不应该使用这些装箱类型。
 
 // { }
+const tmp25: {} = undefined; // 仅在关闭 strictNullChecks 时成立，下同
+const tmp26: {} = null;
+const tmp27: {} = void 0; // void 0 等价于 undefined
+
+const tmp28: {} = 'linbudu';
+const tmp29: {} = 599;
+const tmp30: {} = { name: 'linbudu' };
+const tmp31: {} = () => {};
+const tmp32: {} = [];
+// const tmp33: {} = { name: 'linbudu' };
+
+// tmp33.age = 18; // X 类型“{}”上不存在属性“age”。
 
 
 // symbol

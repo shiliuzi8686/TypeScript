@@ -1,3 +1,29 @@
+// any
+// log(message?: any, ...optionalParams: any[]): void
+// let foo; //在 tsconfig 中启用了 noImplicitAny 时会报错
+
+// foo、bar 均为 any
+// function func(foo, bar){}
+
+
+// 被标记为 any 类型的变量可以拥有任意类型的值
+let anyVar: any = "linbudu";
+
+anyVar = false;
+anyVar = "linbudu";
+anyVar = {
+  site: "juejin"
+};
+
+anyVar = () => { }
+
+// 标记为具体类型的变量也可以接受任何 any 类型的值
+const val1: string = anyVar;
+const val2: number = anyVar;
+const val3: () => {} = anyVar;
+const val4: {} = anyVar;
+
+
 let dididi: any
 
 dididi = () => {
@@ -30,6 +56,32 @@ let v2: void
 v2 = v1
 
 // 类型断言：警告编译器不准报错 --- 是一个将变量的已有类型更改为新指定类型的操作
+// let unknownVar: unknown;
+
+// (unknownVar as { foo: () => {} }).foo();
+
+// const str: string = "linbudu";
+
+// (str as any).func().foo().prop;
+
+// function foo(union: string | number) {
+//     if ((union as string).includes("linbudu")) { }
+
+//     if ((union as number).toFixed() === '599') { }
+// }
+
+// 类型断言的正确使用方式是，在 TypeScript 类型分析不正确或不符合预期时，将其断言为此处的正确类型
+// interface IFoo {
+//     name: string;
+//   }
+  
+//   declare const obj: {
+//     foo: IFoo
+//   }
+  
+//   const {
+//     foo = {} as IFoo
+//   } = obj
 
 // 它的基本语法是 as NewType，你可以将 any / unknown 类型断言到一个具体的类型
 
